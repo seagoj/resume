@@ -3,18 +3,17 @@
     Created on : Feb 2, 2012, 5:06:45 PM
     Author     : jds
     Description:
-        Purpose of the stylesheet follows.
-*/
+        Style for portfolio
 
-/* 
-   TODO customize this sample style
-   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+    Syntax recommendation http://www.w3.org/TR/REC-CSS2/
 */
 
 root { 
     display: block;
 }
 body {
+    font-family: Anonymous Pro;
+    font-size: 12px;
     margin-top:30px;
     background-color: gray;
 }
@@ -28,44 +27,58 @@ a:link,a:visited,a:active{
     color: blue;
 }
 #contact {
-    text-align: center;
-    /*
-    margin-top: 5%;
-    margin-bottom:5%;
-    margin-left:5%;
-    height: 100%;
-    width: 15%;
-    border-right-color: black;
-    border-right-style: inset;
-    border-right-width: thi
-    float: left;
-    */
-
-    /*background-color: gray;*/
+    text-align: justified;
+    position: fixed;
     -moz-border-radius: 15px;
     border-radius: 15px;
 }
 #contact #name {
     font-weight: bold;
+    font-size: 16px;
+    text-align: center;
 }
-
+#address .icon{
+    background:url("secure.php?file=7_location_place16x16.png") no-repeat left;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 3px;
+}
+#citystatezip,#name,#phone,#email,#github {
+    margin-bottom: 3px;
+}
+#citystatezip .icon{
+    margin-right: 19px;
+}
+#phone .icon{
+    background:url("secure.php?file=10_device_access_call16x16.png") no-repeat left;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 3px;
+}
+#email .icon{
+    background:url("secure.php?file=5_content_email16x16.png") no-repeat left;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 3px;
+}
+#github .icon{
+    background:url("secure.php?file=github-icon16x16.png") no-repeat left;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    margin-right: 3px;
+}
 #resume{
-    /*
-    border-left-color: black;
-    border-left-style: inset;
-    border-left-width: thin;
-    float: right;
-    width:75%;
-    */
     background-color: gray;
     -moz-border-radius: 15px;
     border-radius: 15px;
 }
-
 #resume * {
     margin-left:10px;
 }
-
 .section {
     margin-left: 5%;
     margin-top:3%;

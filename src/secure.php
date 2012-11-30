@@ -15,7 +15,10 @@ $mimeTypes = array(
 	'css'=>'text/css',
 	'js'=>'application/x-javascript',
 	'php'=>'application/x-php',
-	'less'=>'text/css'
+	'less'=>'text/css',
+	'jpg'=>'image/jpeg',
+	'jpeg'=>'image/jpeg',
+	'png'=>'image/png'
 );
 
 header(sprintf("Content-type: %s;",$mimeTypes[strtolower(substr($filename,strrpos($filename,'.')+1))]));

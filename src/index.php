@@ -71,15 +71,18 @@ class Portfolio
     {
         $contact = $this->_getSection('portfolio.contact');
 
-        print "<div id='name'>".$contact['name']."</div>"
-            ."<div class='address'>".$contact['address1']."</div>"
-            ."<div id='phone'>".$contact['phone']."</div>"
-            ."<div id='email'><a href='".$contact['email']."'>".$contact['email']."</a></div>"
-            ."<div class='spacer'>&nbsp;</div>"
-            ."<div class='badge'>"
-            ."<a href='http://jigsaw.w3.org/css-validator/check/referer'>"
-            ."<img style='border:0;width:88px;height:31px' src='http://jigsaw.w3.org/css-validator/images/vcss-blue' alt='Valid CSS!' />"
-            ."</a></div>";
+        print "<div id='name'><span class='icon'></span>".$contact['name']."</div>"
+            ."<div id='address'><span class='icon'></span>".$contact['address1']."</div>"
+            ."<div id='citystatezip'><span class='icon'></span>".$contact['city'].", ".$contact['state']." ".$contact['zip']."</div>"
+            ."<div id='phone'><span class='icon'></span>".$contact['phone']."</div>"
+            ."<div id='email'><span class='icon'></span><a href='mailto:".$contact['email']."'>".$contact['email']."</a></div>"
+            ."<div id='github'><span class='icon'></span>".$contact['github']."</div>"
+            //."<div class='badge'>"
+            //."<a href='http://jigsaw.w3.org/css-validator/check/referer'>"
+            //."<img style='border:0;width:88px;height:31px' src='http://jigsaw.w3.org/css-validator/images/vcss-blue' alt='Valid CSS!' />"
+            //."</a>"
+            //."</div>"
+            ;
     }
 
     /**
@@ -279,6 +282,7 @@ $portfolio = new Portfolio();
         <link href="secure.php?file=bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
         <link href="secure.php?file=style.css" rel="stylesheet" type="text/css" />
+        <link  href="http://fonts.googleapis.com/css?family=Anonymous+Pro:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
         
         <title><?= $page['title']?></title>
     </head>
