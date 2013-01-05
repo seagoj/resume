@@ -12,6 +12,8 @@
 //namespace Seagoj\Portfolio;
 require_once '../lib/Predis/autoloader.php';
 require_once 'ImportRedis.php';
+require_once '../lib/Markdown.php';
+//require_once 'git.php';
 //require_once('../lib/autoload/src/autoload.php');
 Predis\Autoloader::register();
 
@@ -54,10 +56,15 @@ class Portfolio
      **/
     public function body()
     {
+        $md = new Markdown();
+        $md->convert('../lib/Portfolio.md');
+
+        /*
         $count = 1;
         while (isset($this->{'section'.$count})) {
             $this->_printSection('section'.$count++);
         }
+        */
     }
 
     /**
@@ -83,6 +90,47 @@ class Portfolio
             //."</a>"
             //."</div>"
             ;
+    }
+
+    /**
+     * Portfolio.projects()
+     *
+     * Prints the projects from GitHub
+     *
+     * @return void
+     **/
+    public function projects()
+    {
+        include_once '../lib/Git.php';
+        $git = new Git();
+        print "<div>before set user</div>";
+        $git->user('seagoj');
+        print "<div>before list</div>";
+        $list = $git->listRepos();
+        die(var_dump($list));
+        print "<div class='well span10'><h3>Current projects</h3>\n";
+        // print "<ul>";
+        // $count = 1;
+        // foreach ($list AS $repo) {
+        //     $name = $git->get($repo, 'name');
+        //     $url = $git->get($repo, 'svn_url');
+        //     if (substr($repo, strpos($repo, '/')+1, 9)=='cookbook-') {
+        //         $link = $url.'/raw/master/recipes/default.rb';
+        //     } else {
+        //         $link = $url.'/raw/master/src/index.php';
+        //     }
+        
+        //     $code = file_get_contents($link);
+            
+        //     print '<div id="codesample'.$count.'">'
+        //         .'<a class="sampleClose">x</a>'
+        //         .'<div class="title">Code Sample</div>'
+        //         .'<pre class="prettyprint">'
+        //         .'<code class="language-php">'.$code."</code></pre></div>";
+        //     print "<li><span class='project'><a id='sample".$count++."' href='#'>".strtoupper($info->name)."</a></span>:".$info->description." <br /><!--//<a href='".$info->svn_url."/raw/master/README.md'>README.md<a>//--></li>";
+        // }
+        // print "</ul>";
+        print "</div>";
     }
 
     /**
@@ -284,7 +332,7 @@ $portfolio = new Portfolio();
         <link href="secure.php?file=style.css" rel="stylesheet" type="text/css" />
         <link  href="http://fonts.googleapis.com/css?family=Anonymous+Pro:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css" >
         
-        <title><?= $page['title']?></title>
+        <title>Jeremy Seago: Portfolio</title>
     </head>
     <body onload="prettyPrint()">
         <div class="container-fluid">
@@ -294,19 +342,15 @@ $portfolio = new Portfolio();
                         <?php $portfolio->contact() ?>
                     </div><!--/.well -->
                 </div><!--/span-->
-            <div class="span10">
-                <div id='resume' class="row-fluid" >
-                    <?php $portfolio->body() ?>
-                        <div id="codesample1">
-                            <a id="sampleClose">x</a>
-                            <div class='title'>Code Sample</div>
-                            <pre class='prettyprint'>
-                                <code class='language-php'><?php print file_get_contents('../lib/model/src/model.php'); ?></code>
-                            </pre>
-                        </div>
-                        <div id="shade"></div>
+                <div class="span10">
+                    <div id='resume' class="row-fluid" >
+                        <?php
+                            $portfolio->body();
+                            $portfolio->projects();
+                        ?>                        
                         <div id='footer'>&nbsp;</div>
                     </div>
+                    <div id="shade" style='background-color: blue;opacity=100%'>&nbsp;</div>
                 </div>
             </div>
         </div>

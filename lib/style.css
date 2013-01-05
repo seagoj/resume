@@ -17,7 +17,13 @@ body {
     margin-top:30px;
     background-color: gray;
 }
-
+h3 {
+    margin-bottom: 0;
+}
+h4, h5  {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 a:hover {
     text-decoration:none;
     color: gray;
@@ -73,8 +79,6 @@ a:link,a:visited,a:active{
 }
 #resume{
     background-color: gray;
-    -moz-border-radius: 15px;
-    border-radius: 15px;
 }
 #resume * {
     margin-left:10px;
@@ -109,10 +113,14 @@ a:link,a:visited,a:active{
 .subsection .entry {
     margin-left: 3%;
 }
+.project {
+    font-weight: bold;
+}
+
 ul{
     list-style-type: square;
     margin-top: 0;
-    margin-bottom:0;
+    margin-bottom: 30px;
 }
 #footer {
     margin-top:3%;
@@ -120,7 +128,8 @@ ul{
 }
 /****************************************/
 #shade{
-display:none;
+/*display:none;*/
+opacity:0;
 position:fixed;
 /*_position:absolute;*/
 height:100%;
@@ -129,9 +138,10 @@ top:0;
 left:0;
 background:#000000;
 border:1px solid #cecece;
-z-index:1;
+z-index:-2;
 }
-#codesample1{
+
+div[id*='codesample'] {
 display:none;
 position:fixed;
 /*_position:absolute;*/
@@ -147,7 +157,7 @@ overflow-x:auto;
 -moz-border-radius: 15px;
 border-radius: 15px;
 }
-#codesample1 .title{
+div[id*='codesample'] .title{
 text-align:left;
 color:#6FA5FD;
 font-size:22px;
@@ -155,7 +165,7 @@ font-weight:700;
 padding-bottom:2px;
 margin-bottom:20px;
 }
-#sampleClose{
+.sampleClose{
 font-size:14px;
 line-height:14px;
 right:6px;
@@ -165,6 +175,7 @@ color:#6fa5fd;
 font-weight:700;
 display:block;
 }
-#sample1 {
+
+div[id*='sample'] {
     font-weight: bold;
 }
