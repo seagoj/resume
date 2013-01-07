@@ -3,6 +3,7 @@ config
 cookbooks
 lib/Predis
 lib/bootstrap
+lib/Devtools
 
 ############
 ## Sublime Text 2
