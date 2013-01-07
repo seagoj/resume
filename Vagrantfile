@@ -4,6 +4,7 @@ require 'fileutils'
 
 Vagrant::Config.run do |config|
   cookbook_location = 'remote'
+<<<<<<< HEAD
   os = 'arch'
   force_update = true
   gui = false
@@ -24,6 +25,26 @@ Vagrant::Config.run do |config|
 
   config.vm.network :bridged
 
+=======
+  cookbooks = {
+    'apt'=>'git@github.com:seagoj/cookbook-apt.git',
+    'php5-fpm'=>'git@github.com:seagoj/cookbook-php5-fpm.git',
+    'nginx'=>'git@github.com:seagoj/cookbook-nginx.git',
+    # 'nginx::bootstrap'=>'git@github.com:seagoj/cookbook-nginx.git',
+    'redis'=>'git@github.com:seagoj/cookbook-redis.git',
+    'ruby'=>'git@github.com:seagoj/cookbook-ruby.git',
+    'sass'=>'git@github.com:seagoj/cookbook-sass.git',
+    'mysql'=>'git://github.com/opscode-cookbooks/mysql.git',
+    'lib::bootstrap'=>'git@github.com:seagoj/cookbooks-lib.git',
+    'lib::predis'=>'git@github.com:seagoj/cookbooks-lib.git',
+    'lib::devtools'=>'git@github.com:seagoj/cookbooks-lib.git'
+
+  }
+  
+  config.vm.box = "precise64"
+  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.network :bridged
+>>>>>>> 638367be31e22baefd4e92bed4caed9350a63a2e
   config.vm.forward_port 80, 8080
   config.vm.forward_port 6379, 6379
 
@@ -34,12 +55,17 @@ Vagrant::Config.run do |config|
     when 'local'
       
     when 'remote'
+<<<<<<< HEAD
       if force_update
         FileUtils.rm_rf(chef.cookbooks_path)
       end
       
       unless File.exists?(chef.cookbooks_path)
         Dir.mkdir(chef.cookbooks_path)
+=======
+      unless File.exists?('cookbooks')
+        Dir.mkdir('cookbooks')
+>>>>>>> 638367be31e22baefd4e92bed4caed9350a63a2e
       end
      cookbooks.each do |k,v|
         command = "git clone "+v+" #{chef.cookbooks_path}/"
@@ -52,7 +78,11 @@ Vagrant::Config.run do |config|
           chef.add_recipe(k)
       end
     end
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 638367be31e22baefd4e92bed4caed9350a63a2e
     chef.json = {
         :nginx => {
             :install_method => 'package',
