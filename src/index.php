@@ -9,13 +9,11 @@
  * @link     http://github.com/seagoj/portfolio
  **/
 
-//namespace Seagoj\Portfolio;
-require_once '../lib/Predis/autoloader.php';
-require_once 'ImportRedis.php';
-require_once '../lib/Markdown.php';
+namespace Seagoj\Portfolio;
+// require_once 'ImportRedis.php';
+// require_once '../lib/Devtools/Markdown.php';
 //require_once 'git.php';
-//require_once('../lib/autoload/src/autoload.php');
-Predis\Autoloader::register();
+require_once 'autoloader.php';
 
 /**
  * Class Portfolio
@@ -37,7 +35,7 @@ class Portfolio
     public function __construct()
     {
         $this->_redis = new Predis\Client();
-        //$this->_dbg = new Debug();
+        // $this->_dbg = new \Devtools\Dbg($this);
         
         $this->page = $this->_getSection("portfolio.page");
         $this->map = explode(",", $this->page['map']);
@@ -345,6 +343,9 @@ $portfolio = new Portfolio();
                 <div class="span10">
                     <div id='resume' class="row-fluid" >
                         <?php
+                            $md = new \Devtools\Markdown();
+                            print $md->convert('../lib/Portfolio.md');
+
                             $portfolio->body();
                             $portfolio->projects();
                         ?>                        

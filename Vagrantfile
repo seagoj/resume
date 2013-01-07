@@ -1,72 +1,48 @@
+require 'rubygems'
+require 'json'
+require 'fileutils'
+
 Vagrant::Config.run do |config|
   cookbook_location = 'remote'
-  # force_update = true
+  os = 'arch'
+  force_update = true
+  gui = false
 
-  cookbooks = {
-    'apt'=>'git@github.com:seagoj/cookbook-apt.git',
-    'php5-fpm'=>'git@github.com:seagoj/cookbook-php5-fpm.git',
-    'nginx'=>'git@github.com:seagoj/cookbook-nginx.git',
-    'nginx::bootstrap'=>'git@github.com:seagoj/cookbook-nginx.git',
-    'redis::php'=>'git@github.com:seagoj/cookbook-redis.git'
-  }
-  
-  # All Vagrant configuration is done here. The most common configuration
-  # options are documented and commented below. For a complete reference,
-  # please see the online documentation at vagrantup.com.
+  cookbooks = JSON.parse(File.open('ingredients.json').read);
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  config.vm.box = "precise64"
+  if os == 'arch'
+    config.vm.box = "arch64"
+    config.vm.box_url = "http://vagrant.pouss.in/archlinux_2012-07-02.box"
+  else
+    config.vm.box = "precise64"
+    config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  end
 
-  # The url from where the 'config.vm.box' box will be fetched if it
-  # doesn't already exist on the user's system.
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  if gui
+    config.vm.boot_mode = :gui
+  end
 
-  # Boot with a GUI so you can see the screen. (Default is headless)
-  # config.vm.boot_mode = :gui
-
-  # Assign this VM to a host-only network IP, allowing you to access it
-  # via the IP. Host-only networks can talk to the host machine as well as
-  # any other machines on the same network, but cannot be accessed (through this
-  # network interface) by any external networks.
-  # config.vm.network :hostonly, "192.168.33.10"
-
-  # Assign this VM to a bridged network, allowing you to connect directly to a
-  # network using the host's network device. This makes the VM appear as another
-  # physical device on your network.
   config.vm.network :bridged
 
-  # Forward a port from the guest to the host, which allows for outside
-  # computers to access the VM, whereas host only networking does not.
   config.vm.forward_port 80, 8080
   config.vm.forward_port 6379, 6379
 
-  # Share an additional folder to the guest VM. The first argument is
-  # an identifier, the second is the path on the guest to mount the
-  # folder, and the third is the path on the host to the actual folder.  
-  # config.vm.share_folder "v-data", "/vagrant_data", "../data"
-
-  # Enable provisioning with chef solo, specifying a cookbooks path, roles
-  # path, and data_bags path (all relative to this Vagrantfile), and adding 
-  # some recipes and/or roles.
-  #
   config.vm.provision :chef_solo do |chef|
-     chef.cookbooks_path = 'cookbooks'  
+     chef.cookbooks_path = 'cookbooks'
 
     case cookbook_location
     when 'local'
       
     when 'remote'
-      # if force_update == true
-      # Dir.delete(cookbooks)
-      # end
-
-
-      #chef.recipe_url = 'https://github.com/seagoj/cookbook/tarball/master
-      unless File.exists?('cookbooks')
-        Dir.mkdir('cookbooks')
+      if force_update
+        FileUtils.rm_rf(chef.cookbooks_path)
+      end
+      
+      unless File.exists?(chef.cookbooks_path)
+        Dir.mkdir(chef.cookbooks_path)
       end
      cookbooks.each do |k,v|
-        command = 'git clone '+v+' cookbooks/'
+        command = "git clone "+v+" #{chef.cookbooks_path}/"
         if k.index(':')
           command += k[0,k.index(':')]
         else
@@ -75,12 +51,7 @@ Vagrant::Config.run do |config|
           system(command)
           chef.add_recipe(k)
       end
-
-      #system("git clone git@github.com:seagoj/cookbook-apt.git cookbooks/apt")
-      # chef.recipe_url = 'https://github.com/opscode-cookbooks/apt/archive/master.tar.gz
     end
-    
-
 
     chef.json = {
         :nginx => {

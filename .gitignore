@@ -1,6 +1,8 @@
 config
 .vagrant
 cookbooks
+lib/Predis
+lib/bootstrap
 
 ############
 ## Sublime Text 2

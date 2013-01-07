@@ -8,6 +8,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace Predis;
 
 use Predis\Command\CommandInterface;
@@ -141,7 +142,7 @@ class Client implements ClientInterface
             throw new \InvalidArgumentException("Invalid connection ID: '$connectionID'");
         }
 
-        return new Client($connection, $this->options);
+        return new static($connection, $this->options);
     }
 
     /**
@@ -266,7 +267,13 @@ class Client implements ClientInterface
             $eval = $this->createCommand('eval');
             $eval->setRawArguments($command->getEvalArguments());
 
-            return $this->executeCommand($eval);
+            $response = $this->executeCommand($eval);
+
+            if (false === $response instanceof ResponseObjectInterface) {
+                $response = $command->parseResponse($response);
+            }
+
+            return $response;
         }
 
         if ($this->options->exceptions === true) {
