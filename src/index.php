@@ -10,9 +10,9 @@
  **/
 
 namespace Seagoj\Portfolio;
-// require_once 'ImportRedis.php';
+require_once 'ImportRedis.php';
 // require_once '../lib/Devtools/Markdown.php';
-//require_once 'git.php';
+// require_once 'git.php';
 require_once 'autoloader.php';
 
 /**
@@ -34,7 +34,7 @@ class Portfolio
      */
     public function __construct()
     {
-        $this->_redis = new Predis\Client();
+        $this->_redis = new \Predis\Client();
         // $this->_dbg = new \Devtools\Dbg($this);
         
         $this->page = $this->_getSection("portfolio.page");
@@ -54,8 +54,8 @@ class Portfolio
      **/
     public function body()
     {
-        $md = new Markdown();
-        $md->convert('../lib/Portfolio.md');
+        $md = new \Devtools\Markdown();
+        print "<div class='well span10'>".$md->convert('../lib/Portfolio.md')."</div>";
 
         /*
         $count = 1;
@@ -343,11 +343,11 @@ $portfolio = new Portfolio();
                 <div class="span10">
                     <div id='resume' class="row-fluid" >
                         <?php
-                            $md = new \Devtools\Markdown();
-                            print $md->convert('../lib/Portfolio.md');
+                            // $md = new \Devtools\Markdown();
+                            // print $md->convert('../lib/Portfolio.md');
 
                             $portfolio->body();
-                            $portfolio->projects();
+                            // $portfolio->projects();
                         ?>                        
                         <div id='footer'>&nbsp;</div>
                     </div>

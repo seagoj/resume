@@ -45,5 +45,5 @@
 * Bachelor of Science in Computer Science
 * Mathematics minor
 
-## Professional Affiliations and Relevant Personal Interests
+## Professional Affiliations
 * Attended Defcon 14 and Defcon 16 Conferences
