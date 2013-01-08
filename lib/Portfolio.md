@@ -1,8 +1,8 @@
 ## Qualification Summary
 * Worked 6+ years as an IT professional managing projects based on client specifications both as the sole consultant/developer and as a member of a project team.
 * Experience in team  based development with code review and open source projects
-* Proficient with SCSS, C++, Java, HTML, ASP, PHP, MySQL, Perl, Javascript, Jquery library, AJAX frameworks, XML, Unix and Linux shell and Windows batch commands
-* Extensive experience with development IDEs such as: Sublime Text 2, IBM Eclipse, *Netbeans* and Microsoft Visual Studio
+* Proficient with SASS, C++, Java, HTML, ASP, PHP, MySQL, Perl, Javascript, Jquery library, AJAX frameworks, XML, Unix and Linux shell and Windows batch commands
+* Extensive experience with development IDEs such as: Sublime Text 2, IBM Netbeans, Eclipse and Microsoft Visual Studio
 * Knowledgeable in unit testing, refactoring, object oriented programming, MVC (Model, View, Control) style programming, OWASP principles and man-in-the-middle security analysis using Burp Suit and Fiddler
 * Experience with utilization and implementation of virtualized development environments through Vagrant and Chef
 * Extensive experience with version control practices and implementation through git, subversion and mercurial

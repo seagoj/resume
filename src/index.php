@@ -11,8 +11,6 @@
 
 namespace Seagoj\Portfolio;
 require_once 'ImportRedis.php';
-// require_once '../lib/Devtools/Markdown.php';
-// require_once 'git.php';
 require_once 'autoloader.php';
 
 /**
@@ -26,7 +24,7 @@ require_once 'autoloader.php';
  */
 class Portfolio
 {
-    //private $_dbg;
+    private $_dbg;
     private $_redis;
     
     /**
@@ -81,13 +79,7 @@ class Portfolio
             ."<div id='citystatezip'><span class='icon'></span>".$contact['city'].", ".$contact['state']." ".$contact['zip']."</div>"
             ."<div id='phone'><span class='icon'></span>".$contact['phone']."</div>"
             ."<div id='email'><span class='icon'></span><a href='mailto:".$contact['email']."'>".$contact['email']."</a></div>"
-            ."<div id='github'><span class='icon'></span>".$contact['github']."</div>"
-            //."<div class='badge'>"
-            //."<a href='http://jigsaw.w3.org/css-validator/check/referer'>"
-            //."<img style='border:0;width:88px;height:31px' src='http://jigsaw.w3.org/css-validator/images/vcss-blue' alt='Valid CSS!' />"
-            //."</a>"
-            //."</div>"
-            ;
+            ."<div id='github'><span class='icon'></span>".$contact['github']."</div>";
     }
 
     /**
@@ -99,8 +91,7 @@ class Portfolio
      **/
     public function projects()
     {
-        include_once '../lib/Git.php';
-        $git = new Git();
+        $git = new \Devtools\Git();
         print "<div>before set user</div>";
         $git->user('seagoj');
         print "<div>before list</div>";
@@ -229,7 +220,7 @@ class Portfolio
     private function _sectionDescription($map,$key='description')
     {
         $ret = $this->$map;
-        //print "\t<div class='description'>".$ret[$key]."</div>\n";
+        // print "\t<div class='description'>".$ret[$key]."</div>\n";
         print "\t<h4>".$ret[$key]."</h4>\n";
     }
 
@@ -318,11 +309,9 @@ $portfolio = new Portfolio();
       
         <link href="secure.php?file=google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
         <script src="secure.php?file=google-code-prettify/prettify.js" type="text/javascript" ></script>
-
       
         <script src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js" type="text/javascript"></script>
         <script src="secure.php?file=codesample.js" type="text/javascript"></script>
-        
       
         <link href="secure.php?file=bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
         <link href="secure.php?file=bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -343,11 +332,8 @@ $portfolio = new Portfolio();
                 <div class="span10">
                     <div id='resume' class="row-fluid" >
                         <?php
-                            // $md = new \Devtools\Markdown();
-                            // print $md->convert('../lib/Portfolio.md');
-
                             $portfolio->body();
-                            // $portfolio->projects();
+                            $portfolio->projects();
                         ?>                        
                         <div id='footer'>&nbsp;</div>
                     </div>
