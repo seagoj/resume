@@ -33,7 +33,7 @@ class Portfolio
     public function __construct()
     {
         $this->_redis = new \Predis\Client();
-        $this->_dbg = new \Devtools\Dbg($this);
+        // $this->_dbg = new \Devtools\Dbg($this);
         
         $this->page = $this->_getSection("portfolio.page");
         $this->map = explode(",", $this->page['map']);
