@@ -10,7 +10,7 @@
  **/
 
 namespace Seagoj\Portfolio;
-require_once 'ImportRedis.php';
+
 require_once 'autoloader.php';
 
 /**
@@ -33,7 +33,7 @@ class Portfolio
     public function __construct()
     {
         $this->_redis = new \Predis\Client();
-        // $this->_dbg = new \Devtools\Dbg($this);
+        $this->_dbg = new \Devtools\Dbg($this);
         
         $this->page = $this->_getSection("portfolio.page");
         $this->map = explode(",", $this->page['map']);
@@ -53,7 +53,25 @@ class Portfolio
     public function body()
     {
         $md = new \Devtools\Markdown();
-        print "<div class='well span10'>".$md->convert('../lib/Portfolio.md')."</div>";
+        $output = array();
+        $first =true;
+        foreach (explode("\n", $md->convert('../lib/Portfolio.md')) AS $line) {
+            if (substr($line, 0, 3)=="<h3") {
+                if(!$first) 
+                    array_push($output, "</div>\n<div class='well span10'>".$line);
+                else {
+                    array_push($output, "<div class='well span10'>".$line);
+                    $first = false;
+                }
+            } else if (substr($line, 0, 5)=="</ul>" && $header) {
+                array_push($output, $line."</div>");
+                $header = false;
+            } else {
+                array_push($output, $line);
+            }
+        }
+        print implode("\n", $output);
+        // print "<div class='well span10'>".$md->convert('../lib/Portfolio.md')."</div>";
 
         /*
         $count = 1;
@@ -92,34 +110,39 @@ class Portfolio
     public function projects()
     {
         $git = new \Devtools\Git();
-        print "<div>before set user</div>";
         $git->user('seagoj');
-        print "<div>before list</div>";
         $list = $git->listRepos();
-        die(var_dump($list));
-        print "<div class='well span10'><h3>Current projects</h3>\n";
-        // print "<ul>";
-        // $count = 1;
-        // foreach ($list AS $repo) {
-        //     $name = $git->get($repo, 'name');
-        //     $url = $git->get($repo, 'svn_url');
-        //     if (substr($repo, strpos($repo, '/')+1, 9)=='cookbook-') {
-        //         $link = $url.'/raw/master/recipes/default.rb';
-        //     } else {
-        //         $link = $url.'/raw/master/src/index.php';
-        //     }
-        
-        //     $code = file_get_contents($link);
-            
-        //     print '<div id="codesample'.$count.'">'
-        //         .'<a class="sampleClose">x</a>'
-        //         .'<div class="title">Code Sample</div>'
-        //         .'<pre class="prettyprint">'
-        //         .'<code class="language-php">'.$code."</code></pre></div>";
-        //     print "<li><span class='project'><a id='sample".$count++."' href='#'>".strtoupper($info->name)."</a></span>:".$info->description." <br /><!--//<a href='".$info->svn_url."/raw/master/README.md'>README.md<a>//--></li>";
-        // }
-        // print "</ul>";
-        print "</div>";
+        if ($list) {
+            print "</div><div class='well span10'><h3>Current projects</h3>\n";
+            print "<ul>";
+            $count = 1;
+            foreach ($list AS $repo) {
+                $name = $git->get($repo, 'name');
+                $url = $git->get($repo, 'svn_url');
+                $description = $git->get($repo, 'description');
+                if (substr($repo, strpos($repo, '/')+1, 9)=='cookbook-') {
+                    $link = $url.'/raw/master/recipes/default.rb';
+                } else {
+                    $link = $url.'/raw/master/src/index.php';
+                }
+                
+                // $file_headers = @get_headers($url);
+                // if ($file_headers[0] != 'HTTP/1.1 404 Not Found') {
+                //     print '<div id="codesample'.$count.'">'
+                //         .'<a class="sampleClose">x</a>'
+                //         .'<div class="title">Code Sample</div>'
+                //         .'<pre class="prettyprint">'
+                //         .'<code class="language-php">'.$code."</code></pre></div>";
+                //     print "<div class='project'><a id='sample".$count++."' href='#'>".strtoupper($name)."</a>:\t".$description."</div>";
+                // } else {
+                    print "<div class='project'><a id='sample".$count++."' href='".$url."'>".strtoupper($name)."</a>:\t".$description."</div>";
+                // }
+
+                
+            }
+            print "</ul>";
+            print "</div>";    
+        }
     }
 
     /**
@@ -306,7 +329,8 @@ $portfolio = new Portfolio();
 <html lang='en' xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>    
         <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
-      
+        <script src="secure.php?file=analytics.js" type="text/javascript"></script>
+
         <link href="secure.php?file=google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
         <script src="secure.php?file=google-code-prettify/prettify.js" type="text/javascript" ></script>
       
@@ -326,22 +350,25 @@ $portfolio = new Portfolio();
             <div class="row-fluid">
                 <div class="span2">
                     <div id='contact' class="well sidebar-nav">
-                        <?php $portfolio->contact() ?>
-                    </div><!--/.well -->
-                </div><!--/span-->
+                        <?php
+                            $portfolio->contact();
+                        ?>
+                    </div>
+                </div>
                 <div class="span10">
                     <div id='resume' class="row-fluid" >
                         <?php
                             $portfolio->body();
                             $portfolio->projects();
-                        ?>                        
+                        ?>
                         <div id='footer'>&nbsp;</div>
                     </div>
-                    <div id="shade" style='background-color: blue;opacity=100%'>&nbsp;</div>
+                    <div id="shade" style='background-color: gray;opacity=100%'>&nbsp;</div>
+                    
+
                 </div>
             </div>
         </div>
-
         <script src="secure.php?file=bootstrap/docs/assets/js/jquery.js"></script>
         <script src="secure.php?file=bootstrap/docs/assets/js/bootstrap-transition.js"></script>
         <script src="secure.php?file=bootstrap/docs/assets/js/bootstrap-alert.js"></script>

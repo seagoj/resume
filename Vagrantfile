@@ -4,7 +4,7 @@ require 'fileutils'
 
 Vagrant::Config.run do |config|
   cookbook_location = 'remote'
-  os = 'arch'
+  os = 'ubuntu'
   force_update = true
   gui = false
 
