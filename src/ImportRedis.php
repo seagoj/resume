@@ -4,8 +4,8 @@ $array = json_decode($json);
 
 //die(var_dump($array));
 
-require_once('../lib/Predis/autoloader.php');
-Predis\Autoloader::register();
+//require_once('../lib/Predis/autoloader.php');
+//Predis\Autoloader::register();
 
 $redis = new Predis\Client();
 

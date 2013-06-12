@@ -17,6 +17,11 @@
 * Response to all tickets within 30 minutes of submission with a 90% clearance rate in the first hour
 
 #### Web Development Projects at Swink Fiehler
+##### Animated slideshow page for major manufacturing company
+* Created a slideshow to showcase product styles available for purchase
+* Worked directly with the client to fine tune the animation style to their specifications
+* Demoed the site for the client
+
 ##### Developed a customer contact generation program with web form management, data entry interface and PHP/MySQL backend.
 * Generated an image based on the customer information stored in the system and either emailed the customer a newsletter or printed the newsletter to be mailed based on if the email address of the customer was known.
 
