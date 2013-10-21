@@ -1,4 +1,8 @@
-<center>Jeremy Seago</center>
+### Jeremy Seago 
+4343 A Shaw Boulevard | Saint Louis, MO 63110  
+314.467.0643 | [seagoj@gmail.com](seagoj@gmail.com)  
+
+---
 
 ### Qualification Summary
 * Over 7 years of experience as an IT professional managing projects based on client specifications both as the sole consultant/developer and as a member of a project team.
@@ -10,11 +14,16 @@
 * Extensive experience with version control practices and implementation through git, subversion and mercurial
 * Knowledge of coding standards and adhearance to the PSR-0/1/2 for PHP development
 
-### Relevant Experience
+### Technical Skills
+* Windows Server Management (MSSQL, Exchange, Active Directory, File & Printer Sharing, Batch scripting)
+* Workstation setup, configuration,  and custom software installation
+* Linux Web Server Managament (Apache, PHP, MySQL, Redis, Nginx, Shell scripting)
+
+### Professional Experience
 #### Information Technology Consultant
 ##### March 2006-Present  Swink, Fiehler &amp; Co. LLC, St. Louis, MO
 * Planning new network infrastructure installations and security and performance improvements to existing networks
-* Installation and ground-up configuration of Windows Server 2003 and 2008 based domains and maintenance of those networks
+* Installation and ground-up configuration of Windows Server environments and maintenance of those networks
 * Daily network issue and trouble ticket resolution
 * Response to all tickets within 30 minutes of submission with a 90% clearance rate in the first hour
 
