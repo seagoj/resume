@@ -1,4 +1,4 @@
-->Jeremy Seago<-
+<center>Jeremy Seago</center>
 
 ### Qualification Summary
 * Over 7 years of experience as an IT professional managing projects based on client specifications both as the sole consultant/developer and as a member of a project team.
