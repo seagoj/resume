@@ -5,7 +5,7 @@
 ===
 
 ### Qualification Summary
-I have worked as a system administrator and general IT consultant for over 7 years providing strategic IT solutions for small and medium sized businesses. I've managed high pressure and time sensitive projects based on client specifications both as the sole consultant and as a member of a project team. I have extensive experience with both physical servers and virtualized environments utilizing VMware and VirtualBox. I have experience with management of client computers both in the setup and initial configuration and with optimization and disaster recovery.
+**System Administrator** with over 7 years of experience providing strategic IT solutions for small and medium sized businesses. I've managed high pressure and time sensitive projects based on client specifications both as the sole consultant and as a member of a project team. I have extensive experience with both physical servers and virtualized environments utilizing VMware and VirtualBox. I have experience with management of client computers both in the setup and initial configuration and with optimization and disaster recovery.
 
 ### Technical Skills
 * Windows Server Management (MSSQL, Exchange, Active Directory, File & Printer Sharing, Batch scripting)
