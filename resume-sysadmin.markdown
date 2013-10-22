@@ -5,15 +5,15 @@
 ===
 
 ### Qualification Summary
-**System Administrator** with over 7 years of experience providing strategic IT solutions for small and medium sized businesses. I've managed high pressure and time sensitive projects based on client specifications both as the sole consultant and as a member of a project team. I have extensive experience with both physical servers and virtualized environments utilizing VMware and VirtualBox. I have experience with management of client computers both in the setup and initial configuration and with optimization and disaster recovery.
+**System Administrator** with over 7 years of experience providing strategic IT solutions for small and medium sized businesses. I've managed high pressure and time sensitive projects based on client specifications both as the sole consultant and as a member of a project team. I have extensive experience with both physical servers and virtualized environments utilizing VMware and VirtualBox. I have experience with management of client computers both in the setup and initial configuration as well as with optimization and disaster recovery.
 
 ### Technical Skills
-* **Windows Server Management**: MSSQL, Exchange, Active Directory, File & Printer Sharing
+* **Windows server management**: MSSQL, Exchange, Active Directory, File & Printer Sharing
 * **Domain workstation management**: Workstation setup, configuration, and custom software installation
-* **Disaster Recovery**: Development of backup plans, diagnosis of hardware failures and recovery from software corruption, viruses and data loss.
-* **Linux Web Server Managament**: Apache, PHP, MySQL, Redis, Nginx
-* **Virtualized Environments**: VMware, VirtualBox, HyperV
-* **Network Infrastructure**: Installation and configuration of various network routers and managed switches including Mikrotik and Cisco.
+* **Disaster recovery**: Development of backup plans, diagnosis of hardware failures and recovery from software corruption, viruses and data loss
+* **Linux web server managament**: Apache, PHP, MySQL, Redis, Nginx
+* **Virtualized environments**: VMware, VirtualBox, HyperV
+* **Network infrastructure**: Installation and configuration of various network routers and managed switches including Mikrotik and Cisco
 * **Web development**: HTML, CSS, Javascript, PHP, MySQL, Redis
 * **Application and script development**: Ruby, Windows Powershell, Linux shell scripting
 
