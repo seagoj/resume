@@ -11,8 +11,8 @@
 * Windows Server Management (MSSQL, Exchange, Active Directory, File & Printer Sharing, Batch scripting)
 * Workstation setup, configuration, and custom software installation
 * Diagnosis of hardware failures and recovery from software corruption, viruses and data loss.
-* Linux Web Server Managament (Apache, PHP, MySQL, Redis, Nginx, Shell scripting)
-* Virtualized Environments (VMware, VirtualBox, HyperV)
+* **Linux Web Server Managament**: Apache, PHP, MySQL, Redis, Nginx, Shell scripting
+* **Virtualized Environments**: VMware, VirtualBox, HyperV
 
 ### Professional Experience
 #### Information Technology Consultant

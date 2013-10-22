@@ -1,4 +1,8 @@
-title:  Jeremy Seago's portfolio
+### Jeremy Seago
+4343 A Shaw Boulevard | Saint Louis, MO 63110
+314.467.0643 | [seagoj@gmail.com](seagoj@gmail.com)
+
+===
 
 ### Qualification Summary
 * Over 7 years of experience as an IT professional managing projects based on client specifications both as the sole consultant/developer and as a member of a team.
@@ -11,14 +15,14 @@ title:  Jeremy Seago's portfolio
 * Knowledge of coding standards and adhearance to the PSR-0/1/2 for PHP development
 * Knowledge of API usage and REST design
 
-### Technical
+### Technical Skills
 * **Languages**: PHP, MySQL, Redis, SASS, CSS, Javascript, JQuery, Ruby, Linux Shell, Windows Batch, Markdown, C++, Java, Python
 * **Applications**: Vim, Sublime Text, IBM Netbeans, Eclipse
 * **Application Server**: Nginx, Apache
 * **Operating Systems**: Linux(Ubuntu, Arch, & Slackware), Windows
 * **Database Systems**: MySQL, Redis, MSSQL, PostgreSQL
 
-### Relevant Experience
+### Professional Experience
 #### Information Technology Consultant
 ##### March 2006-Present  Swink, Fiehler &amp; Co. LLC, St. Louis, MO
 * Planning new network infrastructure installations and security and performance improvements to existing networks
