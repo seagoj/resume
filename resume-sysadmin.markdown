@@ -10,7 +10,7 @@
 ### Technical Skills
 * **Windows Server Management**: MSSQL, Exchange, Active Directory, File & Printer Sharing
 * **Domain workstation management**: Workstation setup, configuration, and custom software installation
-* **Disaster Recovery**: Diagnosis of hardware failures and recovery from software corruption, viruses and data loss.
+* **Disaster Recovery**: Development of backup plans, diagnosis of hardware failures and recovery from software corruption, viruses and data loss.
 * **Linux Web Server Managament**: Apache, PHP, MySQL, Redis, Nginx
 * **Virtualized Environments**: VMware, VirtualBox, HyperV
 * **Network Infrastructure**: Installation and configuration of various network routers and managed switches including Mikrotik and Cisco.
