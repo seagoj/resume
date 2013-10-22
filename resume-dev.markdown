@@ -1,34 +1,29 @@
-### Jeremy Seago
-4343 A Shaw Boulevard | Saint Louis, MO 63110
-314.467.0643 | [seagoj@gmail.com](seagoj@gmail.com)
+###[[ Jeremy Seago
+4343 A Shaw Boulevard | Saint Louis, MO 63110 | 314.467.0643 | [seagoj@gmail.com](seagoj@gmail.com)
 
 ===
 
 ### Qualification Summary
-* Over 7 years of experience as an IT professional managing projects based on client specifications both as the sole consultant/developer and as a member of a team.
-* Team based development with code review and open source projects
-* Extensive experience with development and system administration in Linux environments
-* Knowledgeable in unit testing, refactoring, object oriented programming, MVC style programming, & OWASP principles
-* Experience with utilization and implementation of virtualized development environments through Vagrant and Chef/Puppet
-* Extensive experience with version control practices and implementation through Git
-* Proficient in remote deployment via Git webhooks & FTP
-* Knowledge of coding standards and adhearance to the PSR-0/1/2 for PHP development
-* Knowledge of API usage and REST design
+**System Administrator** with over 7 years of experience providing strategic IT solutions for small and medium sized businesses. During that time, I managed high pressure and time sensitive projects based on client specifications both as the sole consultant and as a member of a project team. I have extensive experience with both physical servers and virtualized environments utilizing VMware and VirtualBox. Further, I managed client computers both in the setup and initial configuration as well as with optimization and disaster recovery.
+
+**Developer** on client and open source projects with extensive experience with development and server administration in Linux environments. I am well versed in the programming practices of coding standards, unit testing, refactoring, object oriented design, model-view-controller structure, REST API design and OWASP security principles. Further, I have exstensive experience in the creation and use of virtualized development environments through Vagrant and Chef/Puppet as well as version control practices and implementation through git and subversion. I have setup and used automatic deployment systems based on git webhooks.
 
 ### Technical Skills
 * **Languages**: PHP, MySQL, Redis, SASS, CSS, Javascript, JQuery, Ruby, Linux Shell, Windows Batch, Markdown, C++, Java, Python
 * **Applications**: Vim, Sublime Text, IBM Netbeans, Eclipse
-* **Application Server**: Nginx, Apache
-* **Operating Systems**: Linux(Ubuntu, Arch, & Slackware), Windows
-* **Database Systems**: MySQL, Redis, MSSQL, PostgreSQL
+* **Application server**: Nginx, Apache
+* **Operating systems**: Linux(Ubuntu, Arch, & Slackware), Windows
+* **Database systems**: MySQL, Redis, MSSQL, PostgreSQL
+* **Version management**: Git, Subversion
 
 ### Professional Experience
 #### Information Technology Consultant
 ##### March 2006-Present  Swink, Fiehler &amp; Co. LLC, St. Louis, MO
+* Technical support for 50 client networks
 * Planning new network infrastructure installations and security and performance improvements to existing networks
-* Installation and ground-up configuration of Windows Server 2003, 2008 and 2012 based domains and maintenance of those networks
+* Installation and ground-up configuration of Windows server based domains and maintenance of those networks
 * Daily network issue and trouble ticket resolution
-* Response to all tickets within 30 minutes of submission with a 90% clearance rate in the first hour
+* Response to tickets within 30 minutes of submission with a 90% clearance rate in the first hour
 
 #### Web Development Projects at Swink Fiehler
 ##### Animated slideshow page for major manufacturing company
