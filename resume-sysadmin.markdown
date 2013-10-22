@@ -22,13 +22,13 @@
 ##### March 2006-October 2013 Swink, Fiehler &amp; Co. LLC, St. Louis, MO
 * Technical support for 50 client networks
 * Planning new network infrastructure installations and security and performance improvements to existing networks
-* Installation and ground-up configuration of Windows Server environments and maintenance of those networks
+* Installation and ground-up configuration of Windows server environments and maintenance of those networks
 * Daily network issue and trouble ticket resolution
-* Response to all tickets within 30 minutes of submission with a 90% clearance rate in the first hour
+* Response to tickets within 30 minutes of submission with a 90% clearance rate in the first hour
 * Development and management of the support ticket system
 * Web development using standards compliant HTML, CSS, Javascript and PHP
 
-#### Staff Tech and Web Developer
+#### Staff Technician and Web Developer
 ##### February 2002 - May 2005  Illinois College, Jacksonville, IL
 * Provided technical support to all campus computers
 * Installed and configured network infrastructure and servers
