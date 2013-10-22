@@ -33,7 +33,7 @@
 * Provided technical support to all campus computers
 * Installed and configured network infrastructure and servers
 * Developed Illinois College website using HTML, Javascript, CSS and Perl CGI scripting
-* Implemented of CSS across entire site
+* Implemented CSS across entire site
 * Migrated and redeveloped website to dynamic ASP environment with substantial CMS support including ability to select page layouts and images
 * Port of ASP site to an ASP.net environment
 
