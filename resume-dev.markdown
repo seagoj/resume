@@ -1,4 +1,4 @@
-###[[ Jeremy Seago
+### Jeremy Seago
 4343 A Shaw Boulevard | Saint Louis, MO 63110 | 314.467.0643 | [seagoj@gmail.com](seagoj@gmail.com)
 
 ===
