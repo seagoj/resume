@@ -12,8 +12,13 @@
 namespace Seagoj\Resume;
 
 require_once 'autoloader.php';
+require_once '../lib/phpToPDF.php';
 
 $portfolio = new \Portfolio();
+
+$pdfCopy = 'JeremySeago-resume.pdf';
+
+phptopdf_url('http://www.google.com/', '.', $pdfCopy);
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">    
@@ -40,6 +45,7 @@ $portfolio = new \Portfolio();
                     <div id='contact' class="well sidebar-nav">
                         <?php
                             $portfolio->contact();
+                            echo "<a href='secure.php?file=".$pdfCopy."'>Download PDF</a>";
                         ?>
                     </div>
                 </div>
